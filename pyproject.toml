@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "meilisearch-rest-cli"
+version = "0.1.0"
+description = "A full-coverage CLI for the Meilisearch REST API, generated from the official OpenAPI spec"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "shivaam" },
+]
+keywords = ["meilisearch", "cli", "rest", "api", "search", "openapi"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "openapi-cli-gen>=0.0.13",
+]
+
+[project.scripts]
+meilisearch-rest-cli = "meilisearch_rest_cli.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/shivaam/meilisearch-rest-cli"
+Repository = "https://github.com/shivaam/meilisearch-rest-cli"
+Issues = "https://github.com/shivaam/meilisearch-rest-cli/issues"
+"Meilisearch API docs" = "https://www.meilisearch.com/docs/reference/api/overview"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/meilisearch_rest_cli"]
