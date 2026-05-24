@@ -5,40 +5,41 @@ build-backend = "hatchling.build"
 [project]
 name = "meilisearch-rest-cli"
 version = "0.1.0"
-description = "A full-coverage CLI for the Meilisearch REST API, generated from the official OpenAPI spec"
+description = "Full-coverage CLI for the Meilisearch REST API"
 readme = "README.md"
-license = "MIT"
 requires-python = ">=3.10"
+license = { text = "MIT" }
 authors = [
-    { name = "shivaam" },
+    { name = "Shivam Rastogi" },
 ]
-keywords = ["meilisearch", "cli", "rest", "api", "search", "openapi"]
+keywords = ["cli", "openapi", "rest", "api", "generated"]
 classifiers = [
     "Development Status :: 4 - Beta",
+    "Environment :: Console",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Topic :: Database",
-    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development",
     "Topic :: Utilities",
 ]
 dependencies = [
-    "openapi-cli-gen>=0.0.13",
+    "openapi-cli-gen>=0.0.19",
 ]
+
+[project.urls]
+Homepage = "https://github.com/shivaam/openapi-cli-gen"
+Source = "https://github.com/shivaam/openapi-cli-gen/tree/main/wrappers/meilisearch-rest-cli"
+Issues = "https://github.com/shivaam/openapi-cli-gen/issues"
+Generator = "https://github.com/shivaam/openapi-cli-gen"
 
 [project.scripts]
 meilisearch-rest-cli = "meilisearch_rest_cli.cli:main"
-
-[project.urls]
-Homepage = "https://github.com/shivaam/meilisearch-rest-cli"
-Repository = "https://github.com/shivaam/meilisearch-rest-cli"
-Issues = "https://github.com/shivaam/meilisearch-rest-cli/issues"
-"Meilisearch API docs" = "https://www.meilisearch.com/docs/reference/api/overview"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/meilisearch_rest_cli"]
